@@ -1,103 +1,109 @@
-# Encryption
-# AES-GCM File Encryptor/Decryptor GUI
+🔐 AES-GCM File Encryptor/Decryptor GUI
 
-A Python-based GUI tool for secure **AES-GCM encryption and decryption** of large files or folders. Supports streaming, password-derived keys (PBKDF2), and progress tracking in a responsive Tkinter interface.
+A Python-based GUI tool for secure AES-GCM encryption and decryption of large files or folders.
+Supports streaming, password-derived keys (PBKDF2), and progress tracking in a responsive Tkinter interface.
 
----
+✨ Features
 
-## Features
+⚡ AES-GCM Streaming Encryption: Encrypts large files efficiently in 64 KB chunks
 
-- **AES-GCM Streaming Encryption:** Encrypts large files efficiently in chunks (64 KB per chunk).
-- **Password-Derived Keys:** PBKDF2 with SHA-256; supports 128-bit or 256-bit keys.
-- **Folder & Single File Support:** Encrypt/decrypt entire folders recursively.
-- **GUI Interface:** Tkinter GUI with browse buttons, progress bar, and status messages.
-- **Optional Drag & Drop:** Supports drag & drop if `tkinterdnd2` is installed.
-- **Safe Encrypted Format:**  
-  `MAGIC(8) | salt(16) | nonce(12) | tag(16) | ciphertext...`  
-  Ensures integrity and easy detection of encrypted files.
-- **Responsive UI:** Uses threading to prevent the interface from freezing during processing.
+🔑 Password-Derived Keys: PBKDF2 with SHA-256; supports 128-bit or 256-bit keys
 
----
+📁 Folder & Single File Support: Encrypt/decrypt entire folders recursively
 
-## Installation
+🖥️ GUI Interface: Tkinter GUI with browse buttons, progress bar, and status messages
 
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/yourusername/aes-gui-encryptor.git
-    cd aes-gui-encryptor
-    ```
+🖱️ Optional Drag & Drop: If tkinterdnd2 is installed
 
-2. Install required dependencies:
-    ```bash
-    pip install cryptography tk
-    ```
-    Optional (for drag & drop support):
-    ```bash
-    pip install tkinterdnd2
-    ```
+🛡️ Safe Encrypted Format:
 
-3. Run the application:
-    ```bash
-    python aes_gui_encryptor.py
-    ```
+MAGIC(8) | salt(16) | nonce(12) | tag(16) | ciphertext...
 
----
 
-## Usage
+Ensures integrity and easy detection of encrypted files
 
-### Single File
-1. Select **Single File** mode.
-2. Browse for the file to encrypt/decrypt.
-3. Enter a password.
-4. Select AES key size (128-bit or 256-bit).
-5. Click **Encrypt ▶** or **Decrypt ◀**.
-6. Encrypted files get a `.enc` extension; decrypted files get `_decrypted` appended.
+🧵 Responsive UI: Threaded processing to prevent freezing during large file operations
 
-### Folder Mode
-1. Select **Folder (recursive)** mode.
-2. Browse for the folder.
-3. Enter a password and key size.
-4. Click **Encrypt ▶** or **Decrypt ◀**.
-5. All files in the folder (recursively) will be processed; non-encrypted files are skipped during decryption.
+🔧 Installation
 
-### Drag & Drop
-- If `tkinterdnd2` is installed, you can drag files or folders directly onto the GUI window.
+Clone the repository:
 
----
+git clone https://github.com/yourusername/aes-gui-encryptor.git
+cd aes-gui-encryptor
 
-## Technical Details
 
-- **Streaming Encryption:** AES-GCM with chunked reads/writes to handle large files.
-- **Key Derivation:** PBKDF2 with configurable key length (128-bit / 256-bit).
-- **Encrypted File Structure:**  
-  `MAGIC | SALT | NONCE | TAG | CIPHERTEXT`
-- **Threaded GUI:** Ensures the UI remains responsive while processing large files.
-- **Folder Processing:** Recursively encrypts/decrypts all regular files in a directory.
+Install dependencies:
 
----
+pip install cryptography tk
 
-## Notes
 
-- Encrypted files are platform-independent and can be transferred securely.
-- Ensure passwords are kept safe; decryption requires the exact password.
-- Use folder mode with care; non-encrypted files will be skipped during decryption.
+Optional (for drag & drop support):
 
----
+pip install tkinterdnd2
 
-## License
 
-This project is licensed under the MIT License. See `LICENSE` for details.
+Run the application:
 
----
+python aes_gui_encryptor.py
 
-## Screenshots
+🛠️ Usage
+Single File Mode
 
-*(Add GUI screenshots here to showcase interface, progress bar, and file selection)*
+Select Single File
 
----
+Browse for the file
 
-## Acknowledgments
+Enter a password
 
-- Python `tkinter` for GUI.
-- `cryptography` library for secure AES-GCM encryption.
-- Inspired by best practices for secure streaming encryption of large files.
+Select AES key size (128-bit / 256-bit)
+
+Click Encrypt ▶ or Decrypt ◀
+
+Output: .enc for encrypted, _decrypted appended for decrypted
+
+Folder Mode
+
+Select Folder (recursive)
+
+Browse for folder
+
+Enter password & key size
+
+Click Encrypt ▶ or Decrypt ◀
+
+All regular files processed recursively; non-encrypted files skipped during decryption
+
+Drag & Drop
+
+Drag files/folders onto GUI if tkinterdnd2 is installed
+
+🧠 Technical Details
+
+Streaming Encryption: Handles large files efficiently
+
+Key Derivation: PBKDF2 with SHA-256
+
+Encrypted File Structure: MAGIC | SALT | NONCE | TAG | CIPHERTEXT
+
+Threaded GUI: Keeps interface responsive
+
+Folder Processing: Recursive encryption/decryption
+
+⚠️ Notes
+
+Encrypted files are platform-independent
+
+Keep passwords safe — exact password required for decryption
+
+Use folder mode carefully; non-encrypted files are skipped during decryption
+
+🏷️ Tags
+
+#python #tkinter #gui #encryption #aes-gcm #cryptography #file-security
+
+🧑‍💻 Author
+
+Deepjyoti Das
+🔗 https://www.linkedin.com/in/deepjyotidas1
+
+💻 GitHub
